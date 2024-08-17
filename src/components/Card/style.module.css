@@ -1,0 +1,12 @@
+.wrapperCard {
+  background-color: #333;
+  border-radius: 1rem;
+  left: 50%;
+  margin: auto;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+}

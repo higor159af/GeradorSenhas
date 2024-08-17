@@ -1,0 +1,12 @@
+.wrapperBtn {
+  background-color: #000;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.4s;
+  &:hover {
+    background-color: #222;
+  }
+}
