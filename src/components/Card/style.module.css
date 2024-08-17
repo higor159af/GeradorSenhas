@@ -10,3 +10,7 @@
   transform: translate(-50%, -50%);
   max-width: 500px;
 }
+
+.wrapperCard input {
+  margin: 15px;
+}

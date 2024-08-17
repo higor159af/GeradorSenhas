@@ -7,6 +7,9 @@ export default function Card(props) {
   const [password, setPassword] = useState();
   const [copyText, setCopyText] = useState("Copiar");
   const [passwordSize, setPasswordSize] = useState(12);
+  const [showInput, setShowInput] = useState(false);
+
+  const size = showInput ? passwordSize : 8;
 
   function createPassword() {
     const character =
@@ -32,12 +35,29 @@ export default function Card(props) {
       <div className={styles.wrapperCard}>
         <h1>{props.title}</h1>
         <div>
-          <label htmlFor="passwordSize">Tamanho:</label>
-          <Input value={passwordSize} setPasswordSize={setPasswordSize}></Input>
+          <label htmlFor="customSize">Customizar Tamanho</label>
+          <input
+            type="checkbox"
+            id="customSize"
+            value={showInput}
+            onChange={() => {
+              setShowInput((currntState) => !currntState);
+            }}
+          />
         </div>
+        {showInput ? (
+          <div>
+            <label htmlFor="passwordSize">Tamanho:</label>
+            <Input
+              value={passwordSize}
+              setPasswordSize={setPasswordSize}
+            ></Input>
+          </div>
+        ) : null}
+
         <div>
           <Button
-            description={`Gerar senha de ${passwordSize} characteres`}
+            description={`Gerar senha de ${size} characteres`}
             onClick={createPassword}
           ></Button>
           <Button description={copyText} onClick={copyPassword}></Button>
